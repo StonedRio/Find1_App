@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DEE9DF"
-    tools:context=".SocialLogin">
+    android:background="@color/background_color"
+    tools:context=".SocialLoginActivity">
 
     <ImageView
         android:id="@+id/background_image"
@@ -115,6 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/subtitle_textview"
         app:layout_constraintWidth_percent="0.8"
         app:startIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
         app:startIconContentDescription="Icon Description"
         app:startIconDrawable="@drawable/ic_account_box_24px">
 
@@ -138,6 +139,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email_InputLayout"
         app:layout_constraintWidth_percent="0.8"
         app:startIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
         app:startIconContentDescription="Icon Description"
         app:startIconDrawable="@drawable/ic_lock_24px">
 

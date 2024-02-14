@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DEE9DF"
-    tools:context=".MainActivity">
+    android:background="@color/background_color"
+    tools:context=".RegisterActivity">
 
     <ImageView
         android:id="@+id/background_image"
@@ -61,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/logo"
         app:layout_constraintWidth_percent="0.8"
         app:startIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
         app:startIconContentDescription="Icon Description"
         app:startIconDrawable="@drawable/ic_account_box_24px">
 
@@ -85,6 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email_InputLayout"
         app:layout_constraintWidth_percent="0.8"
         app:startIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
         app:startIconContentDescription="Icon Description"
         app:startIconDrawable="@drawable/ic_call_24px">
 
@@ -109,6 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/number_InputLayout"
         app:layout_constraintWidth_percent="0.8"
         app:startIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
         app:startIconContentDescription="Icon Description"
         app:startIconDrawable="@drawable/ic_lock_24px">
 
@@ -132,6 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password_InputLayout"
         app:layout_constraintWidth_percent="0.8"
         app:startIconTint="@color/white"
+        app:boxStrokeWidth="0dp"
         app:startIconContentDescription="Icon Description"
         app:startIconDrawable="@drawable/ic_lock_24px">
 

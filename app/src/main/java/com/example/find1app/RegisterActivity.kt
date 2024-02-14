@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.example.find1app.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.socialLoginText.setOnClickListener {
-            val intent = Intent(this, SocialLogin::class.java)
+            val intent = Intent(this, SocialLoginActivity::class.java)
             startActivity(intent)
             finish()
         }

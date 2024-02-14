@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_notification"
+        android:id="@+id/Notification"
+        android:title="Notification" />
+    <item
+        android:icon="@drawable/ic_text_size"
+        android:id="@+id/font_size"
+        android:title="Font size" />
+    <item
+        android:icon="@drawable/ic_how_to"
+        android:id="@+id/how_to"
+        android:title="How to" />
+    <item
+        android:icon="@drawable/ic_about_us"
+        android:id="@+id/about_us"
+        android:title="About us" />
+
+</menu>

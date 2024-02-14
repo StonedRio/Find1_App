@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Find1App" parent="Base.Theme.Find1App" />
+    <style name="Theme.Find1App.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Find1App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Find1App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
