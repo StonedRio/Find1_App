@@ -1,26 +1,27 @@
 package com.example.find1app
 
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.core.view.GravityCompat
+import com.example.find1app.databinding.ActivityHomeBinding
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var binding:ActivityHomeBinding
     private lateinit var toggle: ActionBarDrawerToggle
+    var isBlackBackground = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding=ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        drawerLayout = findViewById(R.id.drawer_layout)
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
+        binding.fab.backgroundTintList = getColorStateList(android.R.color.black)
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -29,21 +30,61 @@ class HomeActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.Notification -> {
-                    Toast.makeText(this, "Notification Clicked", Toast.LENGTH_SHORT).show()
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
                 R.id.font_size -> {
-                    Toast.makeText(this, "Font Size Clicked", Toast.LENGTH_SHORT).show()
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+
                 }
                 R.id.how_to -> {
-                    Toast.makeText(this, "How To Clicked", Toast.LENGTH_SHORT).show()
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
                 R.id.about_us -> {
-                    Toast.makeText(this, "About Us Clicked", Toast.LENGTH_SHORT).show()
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
             }
             true
         }
+        binding.drawerIcon.setOnClickListener {
+            if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                binding.drawerLayout.closeDrawer(GravityCompat.START)
+            } else {
+                binding.drawerLayout.openDrawer(GravityCompat.START)
+            }
+        }
+
+        binding.bottomNavigationView.background = null
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    true
+                }
+                R.id.setting -> {
+
+                    true
+                }
+                R.id.notification -> {
+                    true
+                }
+                R.id.profile -> {
+                    true
+                }
+                else -> false
+            }
+        }
+
+
+
+        binding.fab.setOnClickListener {
+            if (isBlackBackground) {
+                binding.fab.backgroundTintList = getColorStateList(R.color.primary)
+            } else {
+                binding.fab.backgroundTintList = getColorStateList(android.R.color.black)
+            }
+            isBlackBackground = !isBlackBackground
+        }
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
@@ -51,4 +92,5 @@ class HomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
