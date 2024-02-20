@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver"
+    android:fillViewport="true"
+    tools:context=".fragments.CustomSearchFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/tv_lookingfor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/outfit_medium"
+            android:text="What are you looking for?"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_map_icon"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_minus4sdp"
+            android:src="@drawable/ic_map"
+            app:layout_constraintBottom_toBottomOf="@id/tv_region"
+            app:layout_constraintEnd_toStartOf="@id/tv_region"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toTopOf="@+id/tv_region" />
+
+        <TextView
+            android:id="@+id/tv_region"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="Region"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@id/img_map_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_map_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_lookingfor" />
+
+
+        <Spinner
+            android:id="@+id/spinner_map"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_items_region"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_region" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_city_icon"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_minus6sdp"
+            android:src="@drawable/ic_city"
+            app:layout_constraintBottom_toBottomOf="@id/tv_city"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toTopOf="@id/tv_city" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/str_city"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_city_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_map" />
+
+
+        <Spinner
+            android:id="@+id/spinner_city"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_items_city"
+            android:popupBackground="@android:color/white"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_language_icon"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:src="@drawable/ic_language"
+            app:layout_constraintBottom_toBottomOf="@id/tv_language"
+            app:layout_constraintEnd_toStartOf="@+id/tv_language"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_city" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/str_language"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_language_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_city" />
+
+
+        <Spinner
+            android:id="@+id/spinner_language"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_language"
+            android:popupBackground="@android:color/white"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_language" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_institute_icon"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_minus4sdp"
+            android:src="@drawable/ic_institution"
+            app:layout_constraintBottom_toBottomOf="@id/tv_institute"
+            app:layout_constraintEnd_toStartOf="@+id/tv_institute"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_language"
+            app:layout_constraintTop_toTopOf="@id/tv_institute" />
+
+        <TextView
+            android:id="@+id/tv_institute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/str_institution_type"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_institute_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_language" />
+
+
+        <Spinner
+            android:id="@+id/spinner_institute"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_institution"
+            android:pointerIcon="all_scroll"
+            android:popupBackground="@android:color/white"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_institute" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_eduction_icon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_minus6sdp"
+            android:src="@drawable/ic_education_type"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_eduction"
+            app:layout_constraintEnd_toStartOf="@+id/tv_eduction"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_institute"
+            app:layout_constraintTop_toTopOf="@id/tv_eduction" />
+
+        <TextView
+            android:id="@+id/tv_eduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/str_education_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_eduction_icon"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_institute" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_institute"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_eduction"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_boys"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Boys Only"
+                app:cornerRadius="@dimen/_6sdp"
+                app:strokeColor="@android:color/transparent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_girls"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Girls Only"
+                app:strokeColor="@android:color/transparent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_coeduction"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Coeducation"
+                app:cornerRadius="@dimen/_6sdp"
+                app:strokeColor="@android:color/transparent" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_calender_icon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_minus6sdp"
+            android:src="@drawable/ic_institution_year"
+            app:layout_constraintBottom_toBottomOf="@id/tv_institute_year"
+            app:layout_constraintEnd_toStartOf="@+id/tv_institute_year"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toBottomOf="@+id/toggleButton"
+            app:layout_constraintTop_toTopOf="@id/tv_institute_year" />
+
+        <TextView
+            android:id="@+id/tv_institute_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/str_institution_year"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_calender_icon"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
+        <Spinner
+            android:id="@+id/spinner_institute_year"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_institution_year"
+            android:pointerIcon="all_scroll"
+            android:popupBackground="@android:color/white"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_institute_year" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_fee_rang_icon"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_minus6sdp"
+            android:src="@drawable/ic_fee_range"
+            app:layout_constraintBottom_toBottomOf="@id/tv_fee_rang"
+            app:layout_constraintEnd_toStartOf="@+id/tv_fee_rang"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_institute_year"
+            app:layout_constraintTop_toTopOf="@id/tv_fee_rang" />
+
+        <TextView
+            android:id="@+id/tv_fee_rang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/str_fee_range"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_fee_rang_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_institute_year" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/fee_rang_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_institute_year"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fee_rang"
+            app:thumbColor="@color/primary"
+            app:trackColorActive="@color/primary" />
+
+        <TextView
+            android:id="@+id/tv_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:text="Min"
+            android:layout_marginTop="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_max"
+            app:layout_constraintStart_toStartOf="@id/fee_rang_slider"
+            app:layout_constraintTop_toBottomOf="@+id/fee_rang_slider" />
+
+        <TextView
+            android:id="@+id/tv_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:text="Max"
+            app:layout_constraintBottom_toBottomOf="@id/tv_min"
+            app:layout_constraintEnd_toEndOf="@+id/fee_rang_slider"
+            app:layout_constraintTop_toBottomOf="@+id/fee_rang_slider" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:src="@drawable/ic_check_options"
+            android:layout_marginTop="@dimen/_minus5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_option"
+            app:layout_constraintEnd_toStartOf="@id/tv_option"
+            app:layout_constraintStart_toStartOf="@id/tv_lookingfor"
+            app:layout_constraintTop_toTopOf="@id/tv_option" />
+
+        <TextView
+            android:id="@+id/tv_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:fontFamily="@font/outfit_medium"
+            android:padding="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/str_check_the_following_options"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_city_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_max" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/radio_button_transport"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_option">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_transport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/str_transport" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_sports"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/str_sports" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_playarea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/str_play_area" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_swimmingpool"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/str_swimming_pool" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_button_riding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/primary"
+                android:text="@string/str_riding" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_browseRessult"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:backgroundTint="@color/btn_color"
+            android:padding="@dimen/_4sdp"
+            android:text="@string/str_browse_result"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/radioGroup"
+            app:layout_constraintStart_toStartOf="@id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

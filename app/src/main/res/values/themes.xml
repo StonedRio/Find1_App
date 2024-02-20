@@ -10,6 +10,13 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="fontFamily">@font/outfit_medium</item>
+        <item name="android:textColor">#A0A0A0</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
     <style name="Theme.Find1App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Find1App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
