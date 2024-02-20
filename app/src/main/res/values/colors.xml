@@ -5,6 +5,8 @@
     <color name="primary">#159C95</color>
     <color name="light">#597A78</color>
     <color name="background_color">#DEE9DF</color>
+    <color name="silver">#f2f2f2</color>
+
 
 
 </resources>

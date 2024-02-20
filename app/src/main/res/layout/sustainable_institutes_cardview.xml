@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_round_background">
+
+    <ImageView
+        android:id="@+id/institution_imageview"
+        android:src="@drawable/dummy_picture"
+        android:layout_width="match_parent"
+        android:background="@drawable/white_top_round_background"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/institution_name"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="wrap_content"
+        android:text="Institution Name"
+        android:lines="1"
+        android:fontFamily="@font/outfit_bold"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/institution_imageview" />
+
+    <TextView
+        android:id="@+id/rating_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/outfit_bold"
+        android:textSize="@dimen/_10ssp"
+        android:text="(4)"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/institution_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/institution_name" />
+
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star"
+        android:layout_marginEnd="@dimen/_3sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_count"
+        app:layout_constraintEnd_toStartOf="@+id/rating_count"
+        app:layout_constraintTop_toTopOf="@+id/rating_count" />
+
+    <ImageView
+        android:id="@+id/progress_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_how_to"
+        android:layout_marginTop="@dimen/_3sdp"
+        app:layout_constraintTop_toBottomOf="@+id/institution_name"
+        app:layout_constraintStart_toStartOf="@+id/institution_name"
+        />
+
+    <TextView
+        android:id="@+id/progress_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/outfit_regular"
+        android:textSize="@dimen/_9ssp"
+        android:text="97% Sustainable institute"
+        android:textColor="#72B54D"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_icon"
+        app:layout_constraintStart_toEndOf="@id/progress_icon"
+        app:layout_constraintTop_toTopOf="@+id/progress_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

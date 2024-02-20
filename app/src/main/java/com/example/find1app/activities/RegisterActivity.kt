@@ -1,4 +1,4 @@
-package com.example.find1app
+package com.example.find1app.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

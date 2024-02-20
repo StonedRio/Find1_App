@@ -1,4 +1,4 @@
-package com.example.find1app
+package com.example.find1app.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,7 @@ class SocialLoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginText.setOnClickListener {
-            intent= Intent(this,LoginActivity::class.java)
+            intent= Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_140sdp"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_round_background">
+
+    <ImageView
+        android:id="@+id/institution_imageview"
+        android:src="@drawable/dummy_picture"
+        android:layout_width="match_parent"
+        android:background="@drawable/white_top_round_background"
+        android:scaleType="centerCrop"
+        android:clipToOutline="true"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/institution_name"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="wrap_content"
+        android:text="Institution Name"
+        android:lines="1"
+        android:fontFamily="@font/outfit_bold"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/institution_imageview" />
+
+    <TextView
+        android:id="@+id/rating_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/outfit_bold"
+        android:textSize="@dimen/_10ssp"
+        android:text="(4)"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/institution_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/institution_name" />
+
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star"
+        android:layout_marginEnd="@dimen/_3sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_count"
+        app:layout_constraintEnd_toStartOf="@+id/rating_count"
+        app:layout_constraintTop_toTopOf="@+id/rating_count" />
+
+    <ImageView
+        android:id="@+id/gender_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:src="@drawable/gender"
+        app:layout_constraintStart_toStartOf="@+id/institution_name"
+        app:layout_constraintTop_toBottomOf="@+id/institution_name" />
+
+    <TextView
+        android:id="@+id/co_education"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="Co-Education"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/gender_icon"
+        app:layout_constraintTop_toTopOf="@+id/gender_icon"
+        app:layout_constraintStart_toEndOf="@id/gender_icon"/>
+
+    <ImageView
+        android:id="@+id/dollar_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:src="@drawable/dollar"
+        app:layout_constraintEnd_toEndOf="@+id/gender_icon"
+        app:layout_constraintStart_toStartOf="@+id/gender_icon"
+        app:layout_constraintTop_toBottomOf="@+id/gender_icon" />
+
+    <TextView
+        android:id="@+id/starting_from_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fee Starting from"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/dollar_icon"
+        app:layout_constraintStart_toStartOf="@+id/co_education"
+        app:layout_constraintTop_toTopOf="@+id/dollar_icon" />
+    <TextView
+        android:id="@+id/starting_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="1000sar"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/starting_from_label"
+        app:layout_constraintTop_toTopOf="@+id/starting_from_label"
+        app:layout_constraintStart_toEndOf="@id/starting_from_label"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

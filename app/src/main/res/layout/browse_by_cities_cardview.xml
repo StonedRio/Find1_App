@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_80sdp"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_round_background">
+
+    <ImageView
+        android:id="@+id/city_imageview"
+        android:src="@drawable/dummy_picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/white_round_background"
+        android:clipToOutline="true" />
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_height="wrap_content"
+        android:text="City Name"
+        android:lines="1"
+        android:fontFamily="@font/outfit_bold"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/city_imageview" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
