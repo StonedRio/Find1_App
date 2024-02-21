@@ -1,11 +1,18 @@
-package com.example.find1app
+package com.example.find1app.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.FrameLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ReportFragment.Companion.reportFragment
+import com.example.find1app.R
 import com.example.find1app.databinding.ActivityHomeBinding
+import com.example.find1app.fragments.CustomSearchFragment
+import com.example.find1app.fragments.HomeFragment
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -45,6 +52,11 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         }
+
+        val fragmentManager = supportFragmentManager
+        val newFragment = HomeFragment()
+        binding.frameLayout.replaceFragment(fragmentManager, newFragment)
+
         binding.drawerIcon.setOnClickListener {
             if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -53,11 +65,14 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+
         binding.bottomNavigationView.background = null
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
+                    binding.frameLayout.replaceFragment(fragmentManager, newFragment)
                     true
+
                 }
                 R.id.setting -> {
 
@@ -76,13 +91,16 @@ class HomeActivity : AppCompatActivity() {
 
 
         binding.fab.setOnClickListener {
-            if (isBlackBackground) {
-                binding.fab.backgroundTintList = getColorStateList(R.color.primary)
-            } else {
-                binding.fab.backgroundTintList = getColorStateList(android.R.color.black)
-            }
-            isBlackBackground = !isBlackBackground
+//            if (isBlackBackground) {
+//                binding.fab.backgroundTintList = getColorStateList(R.color.primary)
+                binding.frameLayout.replaceFragment(fragmentManager,CustomSearchFragment())
+//            } else {
+//                binding.fab.backgroundTintList = getColorStateList(android.R.color.black)
+//            }
+//            isBlackBackground = !isBlackBackground
         }
+
+
     }
 
 
@@ -92,5 +110,15 @@ class HomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    fun FrameLayout.replaceFragment(fragmentManager: FragmentManager, fragment: Fragment, addToBackStack: Boolean = false) {
+        val transaction = fragmentManager.beginTransaction()
+        transaction.replace(this.id, fragment)
+        if (addToBackStack) {
+            transaction.addToBackStack(null)
+        }
+        transaction.commit()
+    }
+
 
 }

@@ -50,7 +50,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/featured_institutions_recyclerview"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.32"
             android:layout_marginTop="@dimen/_5sdp"
@@ -73,7 +73,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/browse_by_cities_recyclerview"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.15"
             android:layout_marginTop="@dimen/_5sdp"
@@ -96,7 +96,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sustainable_institutes_recyclerview"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.22"
             android:layout_marginTop="@dimen/_5sdp"

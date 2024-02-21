@@ -54,10 +54,9 @@
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinatorLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="121dp"
             android:background="@color/silver"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHeight_percent="0.15"
             tools:context=".MainActivity">
 
             <com.google.android.material.bottomappbar.BottomAppBar
