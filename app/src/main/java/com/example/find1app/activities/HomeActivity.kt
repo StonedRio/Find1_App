@@ -13,6 +13,9 @@ import com.example.find1app.R
 import com.example.find1app.databinding.ActivityHomeBinding
 import com.example.find1app.fragments.CustomSearchFragment
 import com.example.find1app.fragments.HomeFragment
+import com.example.find1app.fragments.NotificationsFragment
+import com.example.find1app.fragments.ProfileFragment
+import com.example.find1app.fragments.SettingFragment
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -53,9 +56,7 @@ class HomeActivity : AppCompatActivity() {
             true
         }
 
-        val fragmentManager = supportFragmentManager
-        val newFragment = HomeFragment()
-        binding.frameLayout.replaceFragment(fragmentManager, newFragment)
+        replaceFragment(HomeFragment())
 
         binding.drawerIcon.setOnClickListener {
             if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -70,18 +71,20 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
-                    binding.frameLayout.replaceFragment(fragmentManager, newFragment)
+                    replaceFragment(HomeFragment())
                     true
 
                 }
                 R.id.setting -> {
-
+                    replaceFragment(SettingFragment())
                     true
                 }
                 R.id.notification -> {
+                    replaceFragment(NotificationsFragment())
                     true
                 }
                 R.id.profile -> {
+                    replaceFragment(ProfileFragment())
                     true
                 }
                 else -> false
@@ -93,7 +96,7 @@ class HomeActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
 //            if (isBlackBackground) {
 //                binding.fab.backgroundTintList = getColorStateList(R.color.primary)
-                binding.frameLayout.replaceFragment(fragmentManager,CustomSearchFragment())
+                replaceFragment(CustomSearchFragment())
 //            } else {
 //                binding.fab.backgroundTintList = getColorStateList(android.R.color.black)
 //            }
@@ -111,14 +114,14 @@ class HomeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun FrameLayout.replaceFragment(fragmentManager: FragmentManager, fragment: Fragment, addToBackStack: Boolean = false) {
-        val transaction = fragmentManager.beginTransaction()
-        transaction.replace(this.id, fragment)
+
+    fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = false) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_layout, fragment)
         if (addToBackStack) {
             transaction.addToBackStack(null)
         }
         transaction.commit()
     }
-
 
 }

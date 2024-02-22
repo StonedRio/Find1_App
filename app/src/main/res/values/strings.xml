@@ -55,7 +55,7 @@
     </string-array>
 
     <string name="large_text">
-        "Material is the metaphor.\n\n"
+        design not provided yet
     </string>
     <string name="str_city">City</string>
     <string name="str_language">Language</string>
@@ -70,6 +70,9 @@
     <string name="str_sports">Sports</string>
     <string name="str_transport">Transport</string>
     <string name="str_check_the_following_options">Check the following options</string>
+    <string name="featured_institutions">Featured Institutions</string>
+    <string name="browse_by_cities">Browse by Cities</string>
+    <string name="sustainable_institutes">Sustainable Institutes</string>
 
 
 </resources>

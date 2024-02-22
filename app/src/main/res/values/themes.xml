@@ -17,6 +17,24 @@
         <item name="android:textSize">@dimen/_12ssp</item>
     </style>
 
+    <style name="RatingBarStyle" parent="Theme.MaterialComponents">
+        <item name="colorControlActivated">@color/color_rating</item>
+        <item name="colorControlNormal">@color/color_rating_bar</item>
+    </style>
+
+    <color name="color_rating_bar">#DDDDDD</color>
+    <color name="color_rating">#FFD960</color>
+    <color name="checkbox_backgroun_color">#02BA20</color>
+
+    <style name="Widget.App.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="buttonTint">@color/checkbox_backgroun_color</item>
+    </style>
+
+    <style name="cornerImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8%</item>
+    </style>
+
     <style name="Theme.Find1App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Find1App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

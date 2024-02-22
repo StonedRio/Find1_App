@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_6sdp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_institute"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="0dp"
+                android:background="@drawable/round_background"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_institute_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/cornerImageView"
+                app:srcCompat="@drawable/dummy_picture"/>
+
+            <TextView
+                android:id="@+id/tv_institute_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:lines="1"
+                android:text="YUSR International School"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toTopOf="@id/tv_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_institute"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:drawableStart="@drawable/ic_location_detail"
+                android:drawablePadding="@dimen/_4sdp"
+                android:fontFamily="@font/outfit_medium"
+                android:lines="1"
+                android:text="location abi sufiyan bin harb saudi arabia"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toTopOf="@id/tv_edu_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_institute_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_institute_name"/>
+
+            <TextView
+                android:id="@+id/tv_edu_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:drawableStart="@drawable/ic_co_education"
+                android:drawablePadding="@dimen/_4sdp"
+                android:text="Co-Education"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_location"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:numStars="5" android:rating="4"
+                android:theme="@style/RatingBarStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvTotalRating"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_transport"/>
+
+            <TextView
+                android:id="@+id/tvTotalRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/outfit_bold"
+                android:gravity="center"
+                android:text="4.0"
+                android:textColor="@color/color_deep_gray"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ratingBar"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_transport"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:scaleX="0.70"
+                android:scaleY="0.70"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="@string/str_transport"
+                app:layout_constraintBottom_toBottomOf="@id/checkbox_play_area" app:layout_constraintEnd_toStartOf="@+id/checkbox_play_area" app:layout_constraintStart_toEndOf="@+id/img_institute" app:layout_constraintStart_toStartOf="@+id/tv_edu_type" app:layout_constraintTop_toBottomOf="@+id/tv_edu_type"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox_play_area"
+                style="@style/Widget.App.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:checked="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:scaleX="0.70" android:scaleY="0.70"
+                android:text="@string/str_play_area"
+                app:layout_constraintBottom_toBottomOf="@+id/checkbox_transport" app:layout_constraintStart_toEndOf="@+id/checkbox_transport" app:layout_constraintTop_toTopOf="@+id/checkbox_transport"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
