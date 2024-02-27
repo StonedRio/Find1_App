@@ -2,7 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Find1App" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">#159C95</item> -->
+        <item name="colorPrimary">#72B54D</item> -->
+    </style>
+
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/primary</item>
+        <item name="colorSwitchThumbNormal">#f1f1f1</item>
+        <!--        <item name="android:colorForeground">@color/primary</item>-->
     </style>
 
     <style name="Theme.Find1App" parent="Base.Theme.Find1App" />

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    tools:context=".fragments.NotificationsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MapviewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:fontFamily="@font/outfit_medium"
-                android:text="Setting"
+                android:text="Mapview"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/arrow_back"
@@ -46,49 +47,27 @@
                 app:layout_constraintStart_toEndOf="@+id/arrow_back"
                 app:layout_constraintTop_toTopOf="@+id/arrow_back" />
 
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/title"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <TextView
-            android:id="@+id/push_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:text="Push Notifications"
-            android:textSize="@dimen/_14ssp"
+        <com.google.android.gms.maps.MapView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bar" />
 
-        <Switch
-            android:id="@+id/push_notification_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:theme="@style/SCBSwitch"
-            android:layout_marginEnd="@dimen/_20sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/push_notification"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/push_notification" />
 
-
-        <TextView
-            android:id="@+id/mute_all_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mute All Notifications"
-            android:textSize="@dimen/_14ssp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/push_notification" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:theme="@style/SCBSwitch"
-            app:layout_constraintBottom_toBottomOf="@+id/mute_all_notification"
-            app:layout_constraintEnd_toEndOf="@+id/push_notification_switch"
-            app:layout_constraintTop_toTopOf="@+id/mute_all_notification" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

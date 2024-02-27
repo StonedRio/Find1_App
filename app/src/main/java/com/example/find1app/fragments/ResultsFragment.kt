@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.find1app.activities.HomeActivity
 import com.example.find1app.adapter.ResultsAdapter
 import com.example.find1app.databinding.FragmentResultsBinding
 import com.example.find1app.model.ResultsInstitution
@@ -24,6 +25,10 @@ class ResultsFragment : Fragment() {
     ): View? {
         _binding=FragmentResultsBinding.inflate(inflater,container,false)
         val view=binding.root
+
+        binding.mapviewIcon.setOnClickListener {
+            (activity as? HomeActivity)?.replaceFragment(MapviewFragment())
+        }
 
 
 

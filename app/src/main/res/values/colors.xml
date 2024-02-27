@@ -2,11 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#159C95</color>
+    <color name="primary">#72B54D</color>
     <color name="light">#597A78</color>
     <color name="background_color">#DEE9DF</color>
     <color name="silver">#f2f2f2</color>
-    <color name="btn_color">#159C95</color>
+    <color name="btn_color">#72B54D</color>
     <color name="color_deep_gray">#686868</color>
     <color name="color_light_gray">#ACACAC</color>
 
