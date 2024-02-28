@@ -21,14 +21,111 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/details_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_details_arrow_back"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="@+id/viewPager"
+            app:layout_constraintStart_toStartOf="@+id/viewPager"/>
+
+        <View
+            android:id="@+id/transparent_black_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#80000000"
+            app:layout_constraintHeight_percent="0.04"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/circle_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/transparent_black_container"
+            app:layout_constraintEnd_toEndOf="@+id/transparent_black_container"
+            app:layout_constraintStart_toStartOf="@+id/transparent_black_container" />
+
+        <TextView
+            android:id="@+id/indicator_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_8ssp"
+            android:background="@drawable/white_round_background"
+            android:layout_marginEnd="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="@+id/viewPager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/viewPager" />
+            app:layout_constraintTop_toTopOf="@+id/transparent_black_container" />
+
+        <TextView
+            android:id="@+id/institution_name"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.7"
+            android:layout_height="wrap_content"
+            android:text="Institution Name"
+            android:textSize="@dimen/_16sdp"
+            android:fontFamily="@font/outfit_bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+
+        <TextView
+            android:id="@+id/rating_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:fontFamily="@font/outfit_bold"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/institution_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/institution_name" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:src="@drawable/star"
+            app:layout_constraintBottom_toBottomOf="@+id/rating_textview"
+            app:layout_constraintEnd_toStartOf="@+id/rating_textview"
+            app:layout_constraintTop_toTopOf="@+id/rating_textview" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/ic_location_detail"
+            app:layout_constraintStart_toStartOf="@+id/institution_name"
+            app:layout_constraintTop_toBottomOf="@+id/institution_name" />
+
+        <TextView
+            android:id="@+id/location_textview"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.5"
+            android:layout_height="wrap_content"
+            android:text="Riyadh, Saudi Arabia"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+
+        <FrameLayout
+            android:id="@+id/details_frame_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_textview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.example.find1app.R
 import com.example.find1app.activities.HomeActivity
 import com.example.find1app.adapter.ImageSliderPagerAdapter
@@ -30,8 +31,34 @@ class DetailsFragment : Fragment() {
         val images= listOf(R.drawable.dummy_picture,R.drawable.dummy_picture,R.drawable.dummy_picture,R.drawable.dummy_picture)
         val adapter= ImageSliderPagerAdapter(images)
         binding.viewPager.adapter=adapter
-
         binding.circleIndicator.setViewPager(binding.viewPager)
+
+        // Set initial indicator text
+        val initialPage = binding.viewPager.currentItem + 1
+        val totalPages = images.size
+        binding.indicatorTextview.text = " $initialPage/$totalPages "
+
+        // onPageChangeListener to update indicator text
+        binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                val currentPage = position + 1
+                val totalPages = images.size
+                binding.indicatorTextview.text = " $currentPage/$totalPages "
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+
+            }
+        })
+
+        binding.detailsArrowBack.setOnClickListener {
+            (activity as? HomeActivity)?.replaceFragment(ResultsFragment())
+        }
+
+
 
         return view
     }
