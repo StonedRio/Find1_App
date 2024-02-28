@@ -10,7 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.find1app.R
 import com.example.find1app.model.ResultsInstitution
 
-class ResultsAdapter(private val itemList: List<ResultsInstitution>) : RecyclerView.Adapter<ResultsAdapter.ResultsViewHolder>() {
+class ResultsAdapter(private val itemList: List<ResultsInstitution>)
+    : RecyclerView.Adapter<ResultsAdapter.ResultsViewHolder>() {
+
+
+    // onClick
+    var onItemClick: ((ResultsInstitution) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.results_cardview, parent, false)
@@ -20,6 +25,12 @@ class ResultsAdapter(private val itemList: List<ResultsInstitution>) : RecyclerV
     override fun onBindViewHolder(holder: ResultsViewHolder, position: Int) {
         val item = itemList[position]
         holder.bind(item)
+
+// onclick
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
+        }
+
     }
 
     override fun getItemCount(): Int {

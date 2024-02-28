@@ -1,6 +1,6 @@
 package com.example.find1app.model
 
-class city (
+class City (
     val imageUrl: String,
     val cityName: String,
         )

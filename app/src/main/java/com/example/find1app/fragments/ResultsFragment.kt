@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.find1app.activities.HomeActivity
@@ -25,6 +26,10 @@ class ResultsFragment : Fragment() {
     ): View? {
         _binding=FragmentResultsBinding.inflate(inflater,container,false)
         val view=binding.root
+
+        binding.backIcon.setOnClickListener {
+            (activity as HomeActivity)?.replaceFragment(HomeFragment())
+        }
 
         binding.mapviewIcon.setOnClickListener {
             (activity as? HomeActivity)?.replaceFragment(MapviewFragment())
@@ -102,6 +107,9 @@ class ResultsFragment : Fragment() {
         binding.resultsRecyclerview.adapter=resultsAdapter
         binding.resultsRecyclerview.layoutManager = LinearLayoutManager(this.context,
             LinearLayoutManager.VERTICAL, false)
+        resultsAdapter.onItemClick={
+            (activity as? HomeActivity)?.replaceFragment(DetailsFragment())
+        }
 
 
 

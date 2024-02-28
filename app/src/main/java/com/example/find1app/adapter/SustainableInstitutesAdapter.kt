@@ -8,7 +8,9 @@ import com.example.find1app.R
 import com.example.find1app.model.FeaturedInstitution
 import com.example.find1app.model.SustainableInstitute
 
-class SustainableInstitutesAdapter(private val itemList: List<SustainableInstitute>) : RecyclerView.Adapter<SustainableInstitutesAdapter.SustainableInstituteViewHolder>() {
+class SustainableInstitutesAdapter(private val itemList: List<SustainableInstitute>) :
+    RecyclerView.Adapter<SustainableInstitutesAdapter.SustainableInstituteViewHolder>() {
+    var onItemClick: ((SustainableInstitute) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SustainableInstituteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.sustainable_institutes_cardview, parent, false)
@@ -18,6 +20,10 @@ class SustainableInstitutesAdapter(private val itemList: List<SustainableInstitu
     override fun onBindViewHolder(holder: SustainableInstituteViewHolder, position: Int) {
         val item = itemList[position]
         holder.bind(item)
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
+        }
     }
 
     override fun getItemCount(): Int {

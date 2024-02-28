@@ -1,10 +1,12 @@
 package com.example.find1app.activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.find1app.R
@@ -15,6 +17,7 @@ import com.example.find1app.fragments.NotificationsFragment
 import com.example.find1app.fragments.ProfileFragment
 import com.example.find1app.fragments.SettingFragment
 import com.google.android.material.navigation.NavigationView
+
 class HomeActivity : AppCompatActivity() {
 
 
@@ -22,10 +25,19 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     var isBlackBackground = false
 
+    private var originalStatusBarColor = 0
+    private var originalSystemUiVisibility = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Store the original status bar color and system UI flags
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            originalStatusBarColor = getWindow().getStatusBarColor();
+        }
+        originalSystemUiVisibility = getWindow().getDecorView().getSystemUiVisibility();
 
 
 
@@ -134,6 +146,21 @@ class HomeActivity : AppCompatActivity() {
 
     fun toggleCoordinatorVisibility(show: Boolean) {
         binding.coordinatorLayout.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    fun hideAppbarBackground(){
+        window.statusBarColor = Color.TRANSPARENT
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                )
+    }
+
+    fun showAppbarBackground(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(originalStatusBarColor);
+        }
+        getWindow().getDecorView().setSystemUiVisibility(originalSystemUiVisibility);
     }
 
 

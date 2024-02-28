@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.find1app.R
+import com.example.find1app.model.City
 import com.example.find1app.model.FeaturedInstitution
-import com.example.find1app.model.city
 
-class BrowseByCitiesAdapter(private val itemList: List<city>) : RecyclerView.Adapter<BrowseByCitiesAdapter.BrowseByCitiesViewHolder>() {
-
+class BrowseByCitiesAdapter(private val itemList: List<City>) :
+    RecyclerView.Adapter<BrowseByCitiesAdapter.BrowseByCitiesViewHolder>() {
+    var onItemClick: ((City) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BrowseByCitiesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.browse_by_cities_cardview, parent, false)
         return BrowseByCitiesViewHolder(view)
@@ -18,6 +19,11 @@ class BrowseByCitiesAdapter(private val itemList: List<city>) : RecyclerView.Ada
     override fun onBindViewHolder(holder: BrowseByCitiesViewHolder, position: Int) {
         val item = itemList[position]
         holder.bind(item)
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -27,7 +33,7 @@ class BrowseByCitiesAdapter(private val itemList: List<city>) : RecyclerView.Ada
     class BrowseByCitiesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val cityNameTextView: TextView = itemView.findViewById(R.id.city_name)
 
-        fun bind(item: city) {
+        fun bind(item: City) {
             cityNameTextView.text = item.cityName
         }
     }

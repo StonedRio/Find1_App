@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.find1app.R
 import com.example.find1app.model.FeaturedInstitution
 
-class FeaturedInstitutionAdapter(private val itemList: List<FeaturedInstitution>) : RecyclerView.Adapter<FeaturedInstitutionAdapter.FeaturedInstitutionViewHolder>() {
+class FeaturedInstitutionAdapter(private val itemList: List<FeaturedInstitution>) :
+    RecyclerView.Adapter<FeaturedInstitutionAdapter.FeaturedInstitutionViewHolder>() {
+
+    var onItemClick: ((FeaturedInstitution) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeaturedInstitutionViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.featured_institution_cardview, parent, false)
@@ -17,6 +20,11 @@ class FeaturedInstitutionAdapter(private val itemList: List<FeaturedInstitution>
     override fun onBindViewHolder(holder: FeaturedInstitutionViewHolder, position: Int) {
         val item = itemList[position]
         holder.bind(item)
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
+        }
+
     }
 
     override fun getItemCount(): Int {

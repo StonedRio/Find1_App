@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.find1app.activities.HomeActivity
 import com.example.find1app.adapter.BrowseByCitiesAdapter
 import com.example.find1app.adapter.FeaturedInstitutionAdapter
 import com.example.find1app.adapter.SustainableInstitutesAdapter
 import com.example.find1app.databinding.FragmentHomeBinding
 import com.example.find1app.model.FeaturedInstitution
 import com.example.find1app.model.SustainableInstitute
-import com.example.find1app.model.city
+import com.example.find1app.model.City
 import com.google.android.material.tabs.TabLayout
 
 class HomeFragment : Fragment() {
@@ -74,7 +75,9 @@ class HomeFragment : Fragment() {
             ),
         )
         adapter= FeaturedInstitutionAdapter(featuredInstitutions)
-
+        adapter.onItemClick={
+            (activity as? HomeActivity)?.replaceFragment(DetailsFragment())
+        }
         binding.featuredInstitutionsRecyclerview.adapter=adapter
         binding.featuredInstitutionsRecyclerview.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL, false)
 
@@ -83,30 +86,32 @@ class HomeFragment : Fragment() {
 
         // BROWSE BY CITIES RECYCLERVIEW
         val cities = listOf(
-            city(
+            City(
                 imageUrl = "https://example.com/image1.jpg",
                 cityName = "fajirah",
             ),
-            city(
+            City(
                 imageUrl = "https://example.com/image1.jpg",
                 cityName = "Ras al khyma",
             ),
-            city(
+            City(
                 imageUrl = "https://example.com/image1.jpg",
                 cityName = "tabuk",
             ),
-            city(
+            City(
                 imageUrl = "https://example.com/image1.jpg",
                 cityName = "dubai",
             ),
-            city(
+            City(
                 imageUrl = "https://example.com/image1.jpg",
                 cityName = "sharjah",
             ),
         )
 
         cityAdapter= BrowseByCitiesAdapter(cities)
-
+        cityAdapter.onItemClick={
+            (activity as? HomeActivity)?.replaceFragment(ResultsFragment())
+        }
         binding.browseByCitiesRecyclerview.adapter=cityAdapter
         binding.browseByCitiesRecyclerview.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL, false)
 
@@ -141,7 +146,9 @@ class HomeFragment : Fragment() {
         )
 
         sustainableinstitutesAdapter= SustainableInstitutesAdapter(SustainableInstitutes)
-
+        sustainableinstitutesAdapter.onItemClick={
+            (activity as? HomeActivity)?.replaceFragment(DetailsFragment())
+        }
         binding.sustainableInstitutesRecyclerview.adapter=sustainableinstitutesAdapter
         binding.sustainableInstitutesRecyclerview.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL, false)
 
