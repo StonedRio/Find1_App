@@ -19,6 +19,12 @@ class BrowseChildFragment : Fragment() {
         _binding= FragmentBrowseChildBinding.inflate(inflater,container,false)
         val view=binding.root
 
+        binding.informationContainer.setOnClickListener {
+            val parentFragment = parentFragment
+            if (parentFragment is DetailsFragment ){
+                parentFragment.replaceChildFragment(InformationChildFragment())
+            }
+        }
 
         return view
     }
