@@ -37,7 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/outfit_medium"
+                android:fontFamily="@font/manrope_medium"
                 android:text="Setting"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp"
@@ -57,7 +57,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:text="About Find1"
-            android:fontFamily="@font/outfit_regular"
+            android:fontFamily="@font/manrope_medium"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bar" />
@@ -79,7 +79,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:text="Privacy Policy"
-            android:fontFamily="@font/outfit_regular"
+            android:fontFamily="@font/manrope_medium"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/about_Find1" />
@@ -101,6 +101,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:text="Language"
+            android:fontFamily="@font/manrope_medium"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/privacy_policy" />
@@ -122,6 +123,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:text="Help"
+            android:fontFamily="@font/manrope_medium"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/language" />
@@ -142,6 +144,7 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:text="Dark Mode"
+            android:fontFamily="@font/manrope_medium"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/help" />

@@ -27,7 +27,7 @@
             android:id="@+id/results_count_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/outfit_medium"
+            android:fontFamily="@font/manrope_medium"
             android:text="Displaying all 20 results"
             android:layout_marginStart="@dimen/_5sdp"
             app:layout_constraintTop_toTopOf="@id/back_icon"

@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_2sdp"
-        android:fontFamily="@font/outfit_bold"
+        android:fontFamily="@font/manrope_bold"
         android:text="Osama Khan"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/profile_pic"
@@ -41,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2 minutes ago"
+        android:fontFamily="@font/manrope_regular"
         android:layout_marginEnd="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rating_bar" />
@@ -51,6 +52,7 @@
         app:layout_constraintWidth_percent="0.8"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/manrope_regular"
         android:text="Consequat velit qui adipisicing sunt do rependerit ad laborum tempor ullamco exercitation. Ullamco tempor adipisicing et voluptate duis sit esse aliqua"
         app:layout_constraintStart_toStartOf="@+id/profile_pic"
         app:layout_constraintTop_toBottomOf="@+id/profile_pic" />

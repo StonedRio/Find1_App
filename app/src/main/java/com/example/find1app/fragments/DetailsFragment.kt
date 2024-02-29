@@ -1,6 +1,5 @@
 package com.example.find1app.fragments
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,10 +32,13 @@ class DetailsFragment : Fragment() {
         binding.viewPager.adapter=adapter
         binding.circleIndicator.setViewPager(binding.viewPager)
 
+
+        replaceChildFragment(BrowseChildFragment())
+
         // Set initial indicator text
         val initialPage = binding.viewPager.currentItem + 1
         val totalPages = images.size
-        binding.indicatorTextview.text = " $initialPage/$totalPages "
+        binding.indicatorTextview.text = " $initialPage/$totalPages"
 
         // onPageChangeListener to update indicator text
         binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
@@ -75,4 +77,15 @@ class DetailsFragment : Fragment() {
         super.onResume()
         (activity as? HomeActivity)?.toggleAppBarVisibility(show = false)
     }
+
+
+    fun replaceChildFragment(fragment: Fragment, addToBackStack: Boolean = false) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(R.id.details_frame_layout, fragment)
+        if (addToBackStack) {
+            transaction.addToBackStack(null)
+        }
+        transaction.commit()
+    }
+
 }
