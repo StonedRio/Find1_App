@@ -26,6 +26,34 @@ class BrowseChildFragment : Fragment() {
             }
         }
 
+        binding.sustainabilityContainer.setOnClickListener {
+            val parentFragment = parentFragment
+            if (parentFragment is DetailsFragment ){
+                parentFragment.replaceChildFragment(SustainabilityChildFragment())
+            }
+        }
+
+        binding.feeStructureContainer.setOnClickListener {
+            val parentFragment = parentFragment
+            if (parentFragment is DetailsFragment ){
+                parentFragment.replaceChildFragment(FeeStructureChildFragment())
+            }
+        }
+
+        binding.galleryContainer.setOnClickListener {
+            val parentFragment = parentFragment
+            if (parentFragment is DetailsFragment ){
+                parentFragment.replaceChildFragment(GalleryChildFragment())
+            }
+        }
+
+        binding.reviewsContainer.setOnClickListener {
+            val parentFragment = parentFragment
+            if (parentFragment is DetailsFragment ){
+                parentFragment.replaceChildFragment(ReviewsChildFragment())
+            }
+        }
+
         return view
     }
 }

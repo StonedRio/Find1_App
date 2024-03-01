@@ -57,7 +57,12 @@ class DetailsFragment : Fragment() {
         })
 
         binding.detailsArrowBack.setOnClickListener {
-            (activity as? HomeActivity)?.replaceFragment(ResultsFragment())
+            val currentFragment = childFragmentManager.findFragmentById(R.id.details_frame_layout)
+            if (currentFragment is BrowseChildFragment) {
+                (activity as? HomeActivity)?.replaceFragment(ResultsFragment())
+            } else {
+                replaceChildFragment(BrowseChildFragment())
+            }
         }
 
 
