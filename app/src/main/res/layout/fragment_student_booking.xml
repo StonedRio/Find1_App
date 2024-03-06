@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.StudentBookingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/silver">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/manrope_medium"
+                android:text="English"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/arrow_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/arrow_back" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/dummy_picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bar" />
+
+        <View
+            android:id="@+id/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:background="#99ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_request"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Booking Request for Institution Name"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/transparent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:id="@+id/tv_student_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Student Information"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <EditText
+            android:id="@+id/et_full_name"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/white_round_background"
+            android:hint="Full Name"
+            android:paddingStart="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_student_info"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <Spinner
+            android:id="@+id/spinner_path"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_items_path"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_full_name"
+            app:layout_constraintWidth_percent="0.85" />
+
+
+        <EditText
+            android:id="@+id/et_available_stages"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/white_round_background"
+            android:hint="Available Stages"
+            android:paddingStart="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_path"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <Spinner
+            android:id="@+id/spinner_day_of_birth"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_day_birth"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_available_stages"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <Spinner
+            android:id="@+id/spinner_month_of_birth"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_month_birth"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_day_of_birth"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <Spinner
+            android:id="@+id/spinner_year_of_birth"
+            android:layout_width="0dp"
+            android:layout_height="?attr/dropdownListPreferredItemHeight"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:entries="@array/spinner_year_birth"
+            android:theme="@style/Spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_month_of_birth"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <EditText
+            android:id="@+id/et_id_number"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/white_round_background"
+            android:hint="ID/Iqama number"
+            android:paddingStart="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_year_of_birth"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_student_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_background"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Add Another Student"
+            app:layout_constraintEnd_toEndOf="@+id/et_id_number"
+            app:layout_constraintStart_toStartOf="@+id/et_id_number"
+            app:layout_constraintTop_toBottomOf="@+id/et_id_number"
+            app:layout_constraintWidth_percent="0.85" />
+
+        <CheckBox
+            android:id="@+id/checkbox_terms"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="@+id/add_student_button"
+            app:layout_constraintTop_toBottomOf="@+id/add_student_button" />
+
+        <TextView
+            android:id="@+id/i_agree_to_the"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I Agree to the"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/manrope_regular"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/checkbox_terms"
+            app:layout_constraintStart_toEndOf="@+id/checkbox_terms"
+            app:layout_constraintTop_toTopOf="@+id/checkbox_terms" />
+
+        <TextView
+            android:id="@+id/tv_terms_and_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms and Conditions"
+            android:textColor="#0000ff"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/manrope_semi_bold"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/i_agree_to_the"
+            app:layout_constraintStart_toEndOf="@+id/i_agree_to_the"
+            app:layout_constraintTop_toTopOf="@+id/i_agree_to_the" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_background"
+            android:fontFamily="@font/manrope_bold"
+            android:text="BACK"
+            app:layout_constraintStart_toStartOf="@+id/checkbox_terms"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_terms"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continue_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_background"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Continue"
+            app:layout_constraintEnd_toEndOf="@+id/add_student_button"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_terms"
+            app:layout_constraintWidth_percent="0.4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

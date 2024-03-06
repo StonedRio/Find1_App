@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
         binding=ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Store the original status bar color and system UI flags
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             originalStatusBarColor = getWindow().getStatusBarColor();
         }
@@ -162,6 +162,5 @@ class HomeActivity : AppCompatActivity() {
         }
         getWindow().getDecorView().setSystemUiVisibility(originalSystemUiVisibility);
     }
-
 
 }

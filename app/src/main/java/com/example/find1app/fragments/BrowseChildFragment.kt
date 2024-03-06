@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.find1app.activities.HomeActivity
 import com.example.find1app.databinding.FragmentBrowseChildBinding
 
 class BrowseChildFragment : Fragment() {
@@ -52,6 +53,10 @@ class BrowseChildFragment : Fragment() {
             if (parentFragment is DetailsFragment ){
                 parentFragment.replaceChildFragment(ReviewsChildFragment())
             }
+        }
+
+        binding.bookNowButton.setOnClickListener {
+            (activity as? HomeActivity)?.replaceFragment(ParentBookingFragment())
         }
 
         return view
