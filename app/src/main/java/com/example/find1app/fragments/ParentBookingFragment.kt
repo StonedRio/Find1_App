@@ -22,6 +22,10 @@ class ParentBookingFragment : Fragment() {
         _binding=FragmentParentBookingBinding.inflate(inflater,container,false)
         val view=binding.root
 
+        binding.arrowBack.setOnClickListener {
+            (activity as? HomeActivity)?.replaceFragment(DetailsFragment())
+        }
+
         binding.nextButton.setOnClickListener {
             (activity as? HomeActivity)?.replaceFragment(StudentBookingFragment())
         }

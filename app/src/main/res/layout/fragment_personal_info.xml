@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".fragments.PersonalInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/silver">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/personal_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/manrope_medium"
+                android:text="Personal Information"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/arrow_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/arrow_back"
+                app:layout_constraintTop_toTopOf="@+id/arrow_back" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:src="@drawable/profile"
+            android:background="@drawable/circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bar" />
+
+        <ImageView
+            android:id="@+id/ic_edit_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit_image"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_22sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:enabled="false"
+            android:fontFamily="@font/manrope_regular"
+            android:gravity="top"
+            android:imeOptions="actionNext"
+            android:text="User Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_edit_image" />
+
+        <TextView
+            android:id="@+id/tvEditUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:fontFamily="@font/manrope_regular"
+            android:text="Edit"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etUserName"
+            app:layout_constraintEnd_toEndOf="@id/etUserName"
+            app:layout_constraintTop_toTopOf="@+id/etUserName" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUserEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/manrope_medium"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:text="test@gmail.com"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/etUserName"
+            app:layout_constraintStart_toStartOf="@+id/etUserName"
+            app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+
+        <TextView
+            android:id="@+id/tvEditUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:fontFamily="@font/manrope_regular"
+            android:text="Edit"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etUserEmail"
+            app:layout_constraintEnd_toEndOf="@id/etUserEmail"
+            app:layout_constraintTop_toTopOf="@+id/etUserEmail" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUserPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/manrope_medium"
+            android:enabled="false"
+            android:text="32333"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/etUserEmail"
+            app:layout_constraintStart_toStartOf="@+id/etUserEmail"
+            app:layout_constraintTop_toBottomOf="@+id/etUserEmail" />
+
+        <TextView
+            android:id="@+id/tvEditPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:fontFamily="@font/manrope_regular"
+            android:text="Edit"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etUserPassword"
+            app:layout_constraintEnd_toEndOf="@id/etUserPassword"
+            app:layout_constraintTop_toTopOf="@+id/etUserPassword" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUserNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/manrope_medium"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:text="23243232"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/etUserPassword"
+            app:layout_constraintStart_toStartOf="@+id/etUserPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etUserPassword" />
+
+        <TextView
+            android:id="@+id/tvEditPhoneNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:fontFamily="@font/manrope_regular"
+            android:text="Edit"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/etUserNumber"
+            app:layout_constraintEnd_toEndOf="@id/etUserNumber"
+            app:layout_constraintTop_toTopOf="@+id/etUserNumber" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="@dimen/_4sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:layout_marginVertical="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etUserNumber" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
