@@ -1,5 +1,7 @@
 package com.example.find1app.activities
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -48,6 +50,21 @@ class HomeActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+        // Logout click
+        binding.logoutLayout.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.remove("token")
+            editor.apply()
+
+            val intent= Intent(this@HomeActivity,LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
+        // menu used in drawer layout
         val navView: NavigationView = findViewById(R.id.nav_view)
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -71,6 +88,7 @@ class HomeActivity : AppCompatActivity() {
 
         replaceFragment(HomeFragment())
 
+        // hamburger icon click listener code for opening and closing drawer layout
         binding.drawerIcon.setOnClickListener {
             if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -80,6 +98,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+        // code of bottom menu for each of item click
         binding.bottomNavigationView.background = null
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -105,6 +124,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+        //code for custom search button click listener used on the top of bottom menu
         binding.fab.setOnClickListener {
 //            if (isBlackBackground) {
 //                binding.fab.backgroundTintList = getColorStateList(R.color.primary)
@@ -130,6 +150,8 @@ class HomeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+
+
     fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = false) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_layout, fragment)
@@ -137,8 +159,9 @@ class HomeActivity : AppCompatActivity() {
             transaction.addToBackStack(null)
         }
         transaction.commit()
-
     }
+
+
 
     fun toggleAppBarVisibility(show: Boolean) {
         binding.appBar.visibility = if (show) View.VISIBLE else View.GONE
@@ -147,6 +170,8 @@ class HomeActivity : AppCompatActivity() {
     fun toggleCoordinatorVisibility(show: Boolean) {
         binding.coordinatorLayout.visibility = if (show) View.VISIBLE else View.GONE
     }
+
+
 
     fun hideAppbarBackground(){
         window.statusBarColor = Color.TRANSPARENT
@@ -162,5 +187,7 @@ class HomeActivity : AppCompatActivity() {
         }
         getWindow().getDecorView().setSystemUiVisibility(originalSystemUiVisibility);
     }
+
+
 
 }

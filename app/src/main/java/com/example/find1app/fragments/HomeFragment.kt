@@ -34,6 +34,7 @@ class HomeFragment : Fragment() {
         val view = binding.root
 
 
+        // TAB LAYOUT ON TOP OF THE PAGE
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("School"))
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("College"))
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("University"))
@@ -50,6 +51,13 @@ class HomeFragment : Fragment() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+
+
+        // filter icon click listener
+        binding.filterIcon.setOnClickListener {
+            val bottomSheetDialog = BottomSheetDialogFragment()
+            bottomSheetDialog.show(childFragmentManager, "BottomSheetDialogFragment")
+        }
 
 
 

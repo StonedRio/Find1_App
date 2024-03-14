@@ -59,6 +59,7 @@ class RegisterActivity : AppCompatActivity() {
                         // Handling the response
                         if(loginResponse.success){
                                 //Registration successfull
+                                val intent = Intent(this@RegisterActivity,LoginActivity::class.java)
                                 Toast.makeText(this@RegisterActivity,""+loginResponse.message.toString(),Toast.LENGTH_SHORT)
                         }else{
                             val errorMessage=loginResponse.message

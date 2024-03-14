@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/_15sdp">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_online_booking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_background"
+        android:backgroundTint="#8072B54D"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_online_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online Booking"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/manrope_bold"
+            android:textSize="@dimen/_18ssp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/installments_checkbox"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tv_online_booking"
+            app:layout_constraintTop_toBottomOf="@+id/tv_online_booking" />
+
+        <TextView
+            android:id="@+id/instalments_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Installments"
+            android:fontFamily="@font/manrope_bold"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/installments_checkbox"
+            app:layout_constraintStart_toEndOf="@+id/installments_checkbox"
+            app:layout_constraintTop_toTopOf="@+id/installments_checkbox" />
+        
+        <TextView
+            android:id="@+id/tv_schools_with_installments"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_regular"
+            android:textSize="@dimen/_12ssp"
+            android:text="Schools with installments over 12 months"
+            android:layout_marginStart="@dimen/_4sdp"
+            app:layout_constraintStart_toStartOf="@+id/installments_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/instalments_textview"/>
+
+
+        <CheckBox
+            android:id="@+id/discounts_checkbox"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/installments_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/tv_schools_with_installments" />
+
+        <TextView
+            android:id="@+id/discounts_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Installments"
+            android:fontFamily="@font/manrope_bold"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/discounts_checkbox"
+            app:layout_constraintStart_toEndOf="@+id/discounts_checkbox"
+            app:layout_constraintTop_toTopOf="@+id/discounts_checkbox" />
+
+        <TextView
+            android:id="@+id/tv_on_fees"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_regular"
+            android:text="On Fees"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginStart="@dimen/_4sdp"
+            app:layout_constraintStart_toStartOf="@+id/discounts_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/discounts_textview"
+            android:paddingBottom="@dimen/_15sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/region_location_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_region_location"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="@+id/layout_online_booking"
+        app:layout_constraintTop_toBottomOf="@+id/layout_online_booking" />
+    <TextView
+        android:id="@+id/region_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_bold"
+        android:textSize="@dimen/_14ssp"
+        android:text="Region"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/region_location_icon"
+        app:layout_constraintStart_toEndOf="@+id/region_location_icon"
+        app:layout_constraintTop_toTopOf="@+id/region_location_icon" />
+    <TextView
+        android:id="@+id/region_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_regular"
+        android:text="Riyadh"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@+id/region_textview"
+        app:layout_constraintEnd_toEndOf="@+id/region_textview"
+        app:layout_constraintStart_toStartOf="@+id/region_location_icon" />
+
+
+
+
+    <ImageView
+        android:id="@+id/district_location_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_district_location"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/district_textview"
+        app:layout_constraintEnd_toStartOf="@+id/district_textview"
+        app:layout_constraintTop_toTopOf="@+id/district_textview" />
+    <TextView
+        android:id="@+id/district_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_bold"
+        android:text="District"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/region_location_icon"
+        app:layout_constraintEnd_toEndOf="@+id/layout_online_booking"
+        app:layout_constraintTop_toTopOf="@+id/region_location_icon" />
+    <TextView
+        android:id="@+id/district_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_regular"
+        android:text="All Districts"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@+id/region_textview"
+        app:layout_constraintEnd_toEndOf="@+id/district_textview" />
+
+    <View
+        android:id="@+id/horizental_border"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/silver"
+        android:paddingBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="@+id/layout_online_booking"
+        app:layout_constraintEnd_toEndOf="@+id/layout_online_booking"
+        app:layout_constraintTop_toBottomOf="@+id/district_name_textview" />
+
+
+    <Spinner
+        android:id="@+id/spinner_language"
+        android:layout_width="0dp"
+        android:layout_height="?attr/dropdownListPreferredItemHeight"
+        android:background="@drawable/bg_spinner_gray_border"
+        android:entries="@array/spinner_curriculum"
+        android:popupBackground="@android:color/white"
+        android:theme="@style/Spinner"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="@+id/horizental_border"
+        app:layout_constraintStart_toStartOf="@+id/horizental_border"
+        app:layout_constraintTop_toBottomOf="@+id/horizental_border" />
+
+        <TextView
+            android:id="@+id/stage_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Stage"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/spinner_language"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_language" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/stage_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/stage_textview"
+            app:layout_constraintTop_toBottomOf="@+id/stage_textview" />
+
+        <TextView
+            android:id="@+id/gender_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Stage"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="@+id/stage_recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/stage_recycler_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gender_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/gender_textview"
+            app:layout_constraintTop_toBottomOf="@+id/gender_textview" />
+
+
+        <TextView
+            android:id="@+id/school_type_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Stage"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="@+id/gender_recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/gender_recycler_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/school_type_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/school_type_textview"
+            app:layout_constraintTop_toBottomOf="@+id/school_type_textview" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

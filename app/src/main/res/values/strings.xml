@@ -132,6 +132,12 @@
         <item>Arabic</item>
     </string-array>
 
+    <string-array name="spinner_curriculum">
+        <item>Curriculum</item>
+        <item>American</item>
+        <item>Others</item>
+    </string-array>
+
     <string-array name="spinner_institution">
         <item>National </item>
         <item>International </item>

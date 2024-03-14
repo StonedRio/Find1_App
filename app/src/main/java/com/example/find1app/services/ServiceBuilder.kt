@@ -6,7 +6,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
     private const val URL="https://find1-ap.nextgcircle.com/api/"
-
     private val okHttp = OkHttpClient.Builder()
     private val builder= Retrofit.Builder().baseUrl(URL)
         .addConverterFactory(GsonConverterFactory.create())
