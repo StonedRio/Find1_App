@@ -1,8 +1,9 @@
 package com.example.find1app.services
 
-import com.example.find1app.model.AuthResponse
+
 import com.example.find1app.model.LoginResponse
 import com.example.find1app.model.RegistrationResponse
+import com.example.find1app.model.TabResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -38,5 +39,9 @@ interface ApiService {
 //    fun authUser(
 //        @Query("x-access-token") accessToken: String,
 //        ): Call<AuthResponse>
+
+
+    @GET("mobile/home/level")
+    fun getTabs(): Call<TabResponse>
 
 }

@@ -12,15 +12,24 @@ import com.example.find1app.adapter.BrowseByCitiesAdapter
 import com.example.find1app.adapter.FeaturedInstitutionAdapter
 import com.example.find1app.adapter.SustainableInstitutesAdapter
 import com.example.find1app.databinding.FragmentHomeBinding
+import com.example.find1app.model.City
 import com.example.find1app.model.FeaturedInstitution
 import com.example.find1app.model.SustainableInstitute
-import com.example.find1app.model.City
+import com.example.find1app.model.Tab
+import com.example.find1app.model.TabResponse
+import com.example.find1app.services.ApiService
+import com.example.find1app.services.ServiceBuilder
 import com.google.android.material.tabs.TabLayout
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+
     private val binding get() = _binding!!
+    val selectedTab=binding.tabLayout.selectedTabPosition
     private lateinit var adapter: FeaturedInstitutionAdapter
     private lateinit var sustainableinstitutesAdapter: SustainableInstitutesAdapter
     private lateinit var cityAdapter: BrowseByCitiesAdapter
@@ -33,24 +42,10 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        // here i"m calling method of fetching tab layout data
+        fetchTabData()
 
-        // TAB LAYOUT ON TOP OF THE PAGE
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("School"))
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("College"))
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("University"))
-        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                when (tab.position) {
-                    0 -> Log.d("asd", "onTabSelected: ")
-                    1 -> Log.d("asd", "onTabSelected: ")
-                    2 -> Log.d("asd", "onTabSelected: ")
-                }
-            }
 
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
 
 
         // filter icon click listener
@@ -160,11 +155,60 @@ class HomeFragment : Fragment() {
         binding.sustainableInstitutesRecyclerview.adapter=sustainableinstitutesAdapter
         binding.sustainableInstitutesRecyclerview.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL, false)
 
-
-
-
         return view
     }
+
+
+
+
+
+
+
+
+
+    // METHOD FOR FETCHING TABLAYOUT DATA AND GETTING CURRENT TAB
+    private fun fetchTabData() {
+        val service = ServiceBuilder.buildService(ApiService::class.java)
+        val call = service.getTabs()
+
+        call.enqueue(object : Callback<TabResponse> {
+            override fun onResponse(call: Call<TabResponse>, response: Response<TabResponse>) {
+                if (response.isSuccessful) {
+                    val tabResponse = response.body()
+                    tabResponse?.let {
+                        setupTabs(it.result)
+                    }
+                } else {
+                    Log.d("HomeFragment", "error "+response.message())
+                }
+            }
+
+            override fun onFailure(call: Call<TabResponse>, t: Throwable) {
+                Log.d("HomeFragment", "Network Error ")
+            }
+        })
+    }
+
+
+//  METHOD FOR SETTING UP TAB
+    private fun setupTabs(tabs: List<Tab>) {
+        for (tab in tabs) {
+            binding.tabLayout.addTab(binding.tabLayout.newTab().setText(tab.name))
+        }
+
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                val currentTabPosition = tab.position
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+    }
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

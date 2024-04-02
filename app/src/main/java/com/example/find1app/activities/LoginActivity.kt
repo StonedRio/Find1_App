@@ -119,7 +119,7 @@ class LoginActivity : AppCompatActivity() {
                         // Handling the response
                         if (loginResponse.success) {
                             // Login successful
-                            Toast.makeText(this@LoginActivity, loginResponse.message, Toast.LENGTH_SHORT).show()
+
                             val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                             intent.putExtra("last_login", loginResponse.user.last_login)
                             intent.putExtra("createdAt", loginResponse.user.createdAt)
@@ -172,8 +172,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
+    override fun onDestroy() {
+        super.onDestroy()
 
-
+    }
 }
 
 
