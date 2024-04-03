@@ -27,9 +27,9 @@ import retrofit2.Response
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
     private val binding get() = _binding!!
-    val selectedTab=binding.tabLayout.selectedTabPosition
+
+    private var selectedTab: Int = 0
     private lateinit var adapter: FeaturedInstitutionAdapter
     private lateinit var sustainableinstitutesAdapter: SustainableInstitutesAdapter
     private lateinit var cityAdapter: BrowseByCitiesAdapter
@@ -159,6 +159,13 @@ class HomeFragment : Fragment() {
     }
 
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        selectedTab = binding.tabLayout.selectedTabPosition
+
+    }
+
+
 
 
 
@@ -189,8 +196,7 @@ class HomeFragment : Fragment() {
         })
     }
 
-
-//  METHOD FOR SETTING UP TAB
+    //  METHOD FOR SETTING UP TAB
     private fun setupTabs(tabs: List<Tab>) {
         for (tab in tabs) {
             binding.tabLayout.addTab(binding.tabLayout.newTab().setText(tab.name))
@@ -199,11 +205,14 @@ class HomeFragment : Fragment() {
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 val currentTabPosition = tab.position
+                selectedTab = currentTabPosition
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {}
 
-            override fun onTabReselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                selectedTab = tab.position
+            }
         })
     }
 

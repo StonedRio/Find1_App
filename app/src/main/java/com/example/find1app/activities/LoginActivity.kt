@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         binding=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         // getting token from shared preferences
+
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val accessToken: String? = sharedPreferences.getString("token",null)
         if(accessToken != null){
@@ -119,7 +119,6 @@ class LoginActivity : AppCompatActivity() {
                         // Handling the response
                         if (loginResponse.success) {
                             // Login successful
-
                             val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                             intent.putExtra("last_login", loginResponse.user.last_login)
                             intent.putExtra("createdAt", loginResponse.user.createdAt)
